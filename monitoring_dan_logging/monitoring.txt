@@ -1,0 +1,1 @@
+Sistem monitoring untuk proyek ini dilakukan secara online melalui dashboard DagsHub MLflow UI. Metrik yang dipantau adalah Silhouette Score untuk memastikan performa model K-Means tetap optimal. Bukti aktivitas monitoring dapat dilihat pada tab 'Charts' di repository DagsHub yang tautannya telah disertakan dalam file DagsHub.txt.
