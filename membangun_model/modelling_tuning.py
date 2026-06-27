@@ -20,13 +20,13 @@ from sklearn.decomposition import PCA
 df = pd.read_csv('OnlineRetail.csv', encoding='latin1')
 
 print("5 baris Pertama")
-display(df.head())
+print(df.head())
 
 print("\nINFO DATA:")
 print(df.info())
 
 print("\nDESKRIPSI STATISTIK:")
-display(df.describe())
+print(df.describe())
 
 # Missing Values & Duplikasi
 print("\nMissing Value:")
@@ -105,12 +105,12 @@ plt.show()
 #  Customer paling aktif
 active_customer = df.groupby('CustomerID')['InvoiceNo'].nunique().sort_values(ascending=False).head(10)
 print("\nTop 10 Customer Paling Aktif:")
-display(active_customer)
+print(active_customer)
 
 #  Customer dengan pembelian terbanyak
 top_cust_qty = df.groupby('CustomerID')['Quantity'].sum().sort_values(ascending=False).head(10)
 print("\nTop 10 Customer dengan Quantity Terbanyak:")
-display(top_cust_qty)
+print(top_cust_qty)
 
 plt.figure(figsize=(8,4))
 sns.boxplot(x=df['Quantity'], color='skyblue')
@@ -642,10 +642,10 @@ import joblib
 joblib.dump(kmeans, 'kmeans_rfm_model.pkl')
 joblib.dump(scaler, 'rfm_scaler.pkl')
 
-from google.colab import files
+# from google.colab import files
 
-files.download('kmeans_rfm_model.pkl')
-files.download('rfm_scaler.pkl')
+# files.download('kmeans_rfm_model.pkl')
+# files.download('rfm_scaler.pkl')
 
 import pandas as pd
 import os
@@ -699,16 +699,16 @@ with open('automate_Ahul.py', 'w') as f:
 
 print("File 'automate_Ahul.py' telah dibuat di folder Colab.")
 
-from google.colab import files
+# from google.colab import files
 
 # Download script automasi
-files.download('automate_Ahul.py')
+# files.download('automate_Ahul.py')
 
 # Download data yang sudah bersih (untuk jaga-jaga)
 df_clean.to_csv('OnlineRetail_preprocessed.csv', index=False)
-files.download('OnlineRetail_preprocessed.csv')
+# files.download('OnlineRetail_preprocessed.csv')
 
-!pip install mlflow dagshub
+# !pip install mlflow dagshub
 
 import mlflow
 import dagshub
@@ -763,7 +763,7 @@ with mlflow.start_run(run_name="KMeans_Segmentation_With_Metrics"):
 
     print(f"Berhasil! Score: {score}. Cek tab 'Charts' di DagsHub sekarang.")
 
-!pip install pipreqs
+# !pip install pipreqs
 
-!pipreqs . --force
+# !pipreqs . --force
 
