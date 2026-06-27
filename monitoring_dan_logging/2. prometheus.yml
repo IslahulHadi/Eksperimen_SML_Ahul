@@ -1,21 +1,13 @@
-# prometheus.yml
-# Konfigurasi Prometheus untuk monitoring model inference
-# Proyek Customer Segmentation oleh Ahul (IslahulHadi)
-
+# prometheus.yml (versi untuk Docker)
 global:
-  scrape_interval: 15s      # Scrape setiap 15 detik
-  evaluation_interval: 15s  # Evaluasi rules setiap 15 detik
+  scrape_interval: 15s
+  evaluation_interval: 15s
 
 scrape_configs:
-  # Job untuk monitoring metrics dari model inference
   - job_name: 'model_inference'
     static_configs:
-      - targets: ['localhost:5000']
-        labels:
-          app: 'customer_segmentation'
-          model: 'kmeans_rfm'
+      - targets: ['host.docker.internal:8000']
 
-  # Job untuk monitoring Prometheus itu sendiri
   - job_name: 'prometheus'
     static_configs:
       - targets: ['localhost:9090']

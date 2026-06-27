@@ -8,3 +8,8 @@ __pycache__/
 
 # Folder WORKFLOW-CL (repo terpisah)
 _WORKFLOW-CL/
+
+# Virtual environments
+venv/
+**/venv/
+

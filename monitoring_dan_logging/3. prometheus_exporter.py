@@ -81,4 +81,4 @@ if __name__ == '__main__':
     print("Metrics endpoint: http://127.0.0.1:8000/metrics")
     print("Predict endpoint: http://127.0.0.1:8000/predict")
     print("=" * 50)
-    app.run(host='127.0.0.1', port=8000)
+    app.run(host='0.0.0.0', port=8000)
